@@ -25,6 +25,7 @@
   </div>
   <script>
     function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
       document.getElementById("cookiePopup").style.display = "none";
     }
     window.onload = () => {

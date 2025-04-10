@@ -24,7 +24,7 @@ form {
   flex-direction: column;
   gap: 10px;
 }
-input, select {
+input, select, textarea {
   padding: 10px;
   font-size: 1em;
 }
