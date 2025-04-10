@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Publicar Vaga</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <img src="turna-logo.png" alt="Logo Turna" class="logo"/>
+        <h2>Publicar Vaga</h2>
+        <form action="#" method="post">
+            <label for="titulo">Título da Vaga</label>
+            <input type="text" id="titulo" name="titulo" required/>
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+                <option value="">Selecione</option>
+                <option>Restaurante</option>
+                <option>Bar</option>
+                <option>Hotel</option>
+                <option>Café</option>
+                <option>Evento</option>
+                <option>Buffet</option>
+                <option>Outros</option>
+            </select>
+
+            <label for="tipo">Tipo</label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Selecione</option>
+                <option>CLT</option>
+                <option>Freelancer</option>
+            </select>
+
+            <button type="submit" class="btn-orange">Publicar</button>
+        </form>
+    </div>
+</body>
+</html>
