@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Turna</title>
-<link rel='stylesheet' href='style.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turna - Início</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class='home'>
-<!-- Conteúdo da index com imagem de fundo e logotipo -->
+<body style="background-image: url('img/background.jpg');">
+    <header>
+        <img src="img/logo.png" alt="Turna Logo" class="logo">
+        <h2>Encontre vagas ou profissionais ideais</h2>
+    </header>
+    <nav>
+        
+            <a href="empresas.html">Empresas</a>
+            <a href="profissionais.html">Profissionais</a>
+            <a href="login.html">Login</a>
+            <a href="busca-vagas.html">Buscar Vagas</a>
+            <a href="busca-profissionais.html">Buscar Profissionais</a>
+            <a href="assinatura.html">Assinatura</a>
+        
+    </nav>
+    <footer>
+        <a href="termos.html">Termos de Uso</a> | <a href="privacidade.html">Privacidade</a>
+    </footer>
+    <div class="cookie-popup" id="cookiePopup">
+        Este site usa cookies para melhorar sua experiência.
+        <button onclick="document.getElementById('cookiePopup').style.display='none'">Aceitar</button>
+    </div>
 </body>
 </html>
