@@ -41,12 +41,11 @@
 
     <div class="links-rodape">
       <a href="index.html">Voltar ao início</a>
-      <a href="login.html">Já é cadastrado? Faça login</a>
     </div>
   </div>
 
   <script>
-    // Validação de CNPJ
+    // Validação básica de CNPJ (formato e dígitos)
     function validarCNPJ() {
       const cnpj = document.getElementById("cnpj").value.replace(/[^\d]+/g, '');
 
