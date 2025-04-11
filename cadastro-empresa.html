@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastro de Empresa | Turna</title>
-  
-  <meta name="description" content="Cadastre sua empresa na Turna e encontre profissionais ideais para bares, restaurantes, cafés, eventos e muito mais em São Paulo. Fácil, rápido e seguro.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Empresas | Turna</title>
+  <meta name="description" content="Cadastre sua empresa no Turna e publique oportunidades para profissionais do setor.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script>
+    // Validação básica de CNPJ
+    function validarCNPJ(cnpj) {
+      cnpj = cnpj.replace(/[^\d]+/g, '');
+      if (cnpj.length !== 14) return false;
+      if (/^(\d)\1+$/.test(cnpj)) return false;
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+      let t = cnpj.length - 2,
+          d = cnpj.substring(t),
+          d1 = parseInt(d.charAt(0)),
+          d2 = parseInt(d.charAt(1)),
+          calc = x => {
+            let n = cnpj.substring(0, x),
+                y = x - 7,
+                s = 0;
+            for (let i = x; i >= 1; i--) {
+              s += n.charAt(x - i) * y--;
+              if (y < 2) y = 9;
+            }
+            const r = 11 - s % 11;
+            return r > 9 ? 0 : r;
+          };
+      return calc(t) === d1 && calc(t + 1) === d2;
+    }
+
+    function validarFormulario() {
+      const cnpjInput = document.getElementById('cnpj').value;
+      if (!validarCNPJ(cnpjInput)) {
+        alert('CNPJ inválido. Verifique e tente novamente.');
+        return false;
+      }
+      return true;
+    }
+  </script>
 </head>
-<body class="fundo-branco">
+<body>
+
   <header class="cabecalho">
-    <img src="turna-logo.png" alt="Turna" class="logo" />
+    <img src="turna-logo.png" alt="Turna" class="logo">
   </header>
 
   <main class="container-cadastro">
     <h2>Cadastro de Empresa</h2>
+    <form onsubmit="return validarFormulario()">
+      <input type="text" name="nome" placeholder="Nome da Empresa" required>
+      <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="senha" placeholder="Senha" required>
 
-    <form class="formulario" onsubmit="return validarCNPJ()">
-      <input type="text" name="empresa" placeholder="Nome da Empresa" required />
-      <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" required />
-      <input type="email" name="email" placeholder="E-mail" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      
       <select name="categoria" required>
-        <option value="">Selecione a categoria</option>
+        <option value="" disabled selected>Selecione a categoria</option>
         <option value="Balada">Balada</option>
         <option value="Bar">Bar</option>
         <option value="Buffet">Buffet</option>
@@ -36,52 +68,14 @@
         <option value="Restaurante">Restaurante</option>
       </select>
 
-      <button type="submit" class="botao laranja">Cadastrar</button>
+      <button type="submit">Cadastrar</button>
     </form>
 
     <div class="links-rodape">
-      <a href="index.html">Voltar ao início</a> |
+      <a href="index.html">Voltar ao início</a>
       <a href="login.html">Já é cadastrado? Faça login</a>
     </div>
   </main>
 
-  <script>
-    function validarCNPJ() {
-      const cnpj = document.getElementById("cnpj").value.replace(/[^\d]+/g, '');
-      if (cnpj.length !== 14 || /^(\d)\1+$/.test(cnpj)) {
-        alert("CNPJ inválido.");
-        return false;
-      }
-
-      let tamanho = cnpj.length - 2;
-      let numeros = cnpj.substring(0, tamanho);
-      let digitos = cnpj.substring(tamanho);
-      let soma = 0;
-      let pos = tamanho - 7;
-
-      for (let i = tamanho; i >= 1; i--) {
-        soma += numeros.charAt(tamanho - i) * pos--;
-        if (pos < 2) pos = 9;
-      }
-
-      let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-      if (resultado != digitos.charAt(0)) return alert("CNPJ inválido."), false;
-
-      tamanho += 1;
-      numeros = cnpj.substring(0, tamanho);
-      soma = 0;
-      pos = tamanho - 7;
-
-      for (let i = tamanho; i >= 1; i--) {
-        soma += numeros.charAt(tamanho - i) * pos--;
-        if (pos < 2) pos = 9;
-      }
-
-      resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-      if (resultado != digitos.charAt(1)) return alert("CNPJ inválido."), false;
-
-      return true;
-    }
-  </script>
 </body>
 </html>
