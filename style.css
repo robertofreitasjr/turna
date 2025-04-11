@@ -8,10 +8,13 @@ body {
 }
 
 body.home {
-  background: url("fundo-home.png") no-repeat center center;
+  background: url("fundo-home.png") no-repeat center center fixed;
   background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .container {
   text-align: center;
   padding: 40px 20px;
