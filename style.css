@@ -1,133 +1,54 @@
-/* Reset básico */
-* {
+body.home {
+  background: url('fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #ffffff;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 120px; /* espaço para o cabeçalho fixo */
-}
-
-/* Cabeçalho com logo fixo */
-.cabecalho {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.logo {
-  max-width: 200px;
-  height: auto;
-}
-
-/* Container principal */
-.container-cadastro {
-  max-width: 400px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.container-cadastro h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  padding-top: 150px;
 }
 
-form input,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
+header .logo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  z-index: 1000;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ff6600;
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
+}
+
+h1 {
+  font-size: 22px;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #e65c00;
+.btn.laranja {
+  background-color: #f60;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 200px;
 }
 
-.links-rodape {
-  text-align: center;
+.links-home {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   margin-top: 20px;
 }
 
-.links-rodape a {
-  color: #ff6600;
-  text-decoration: none;
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Estilo especial para a index (imagem de fundo) */
-.index {
-  background: url('fundo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+.links-home a {
   color: white;
-  text-align: center;
-}
-
-.index .logo {
-  margin-bottom: 10px;
-}
-
-.index h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.index p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-.index .botoes {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.index .botoes a {
-  background-color: #ff6600;
-  color: white;
+  font-size: 14px;
   text-decoration: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 18px;
 }
