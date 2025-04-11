@@ -84,3 +84,59 @@ body.home {
   text-decoration: none;
   font-weight: bold;
 }
+.fundo-branco {
+  background-color: #ffffff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container-cadastro {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.botao.laranja {
+  background-color: #f57c00;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.botao.laranja:hover {
+  background-color: #e56b00;
+}
+
+.links-rodape {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.links-rodape a {
+  color: #f57c00;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.links-rodape a:hover {
+  text-decoration: underline;
+}
