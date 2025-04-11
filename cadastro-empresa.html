@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<body>
+<body class="fundo-branco">
   <header class="cabecalho">
     <img src="turna-logo.png" alt="Turna" class="logo" />
   </header>
 
-  <div class="container">
-    <h2 class="titulo-pagina">Cadastro de Empresa</h2>
+  <main class="container-cadastro">
+    <h2>Cadastro de Empresa</h2>
 
     <form class="formulario" onsubmit="return validarCNPJ()">
       <input type="text" name="empresa" placeholder="Nome da Empresa" required />
@@ -40,15 +40,14 @@
     </form>
 
     <div class="links-rodape">
-      <a href="index.html">Voltar ao início</a>
+      <a href="index.html">Voltar ao início</a> |
+      <a href="login.html">Já é cadastrado? Faça login</a>
     </div>
-  </div>
+  </main>
 
   <script>
-    // Validação básica de CNPJ (formato e dígitos)
     function validarCNPJ() {
       const cnpj = document.getElementById("cnpj").value.replace(/[^\d]+/g, '');
-
       if (cnpj.length !== 14 || /^(\d)\1+$/.test(cnpj)) {
         alert("CNPJ inválido.");
         return false;
@@ -66,10 +65,7 @@
       }
 
       let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-      if (resultado != digitos.charAt(0)) {
-        alert("CNPJ inválido.");
-        return false;
-      }
+      if (resultado != digitos.charAt(0)) return alert("CNPJ inválido."), false;
 
       tamanho += 1;
       numeros = cnpj.substring(0, tamanho);
@@ -82,10 +78,7 @@
       }
 
       resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-      if (resultado != digitos.charAt(1)) {
-        alert("CNPJ inválido.");
-        return false;
-      }
+      if (resultado != digitos.charAt(1)) return alert("CNPJ inválido."), false;
 
       return true;
     }
