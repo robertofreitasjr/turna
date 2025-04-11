@@ -1,24 +1,17 @@
-/.cabecalho {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: transparent;
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1000;
-}
-
-.logo {
-  width: 240px;
-}* Estilos gerais */
-body {
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: white;
-  color: #fff;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Estilo específico para a home com fundo */
 body.home {
   background: url("fundo-home.png") no-repeat center center fixed;
   background-size: cover;
@@ -27,21 +20,37 @@ body.home {
   justify-content: center;
   align-items: center;
 }
-.container {
+
+/* Cabeçalho com logo fixo */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
   text-align: center;
-  padding: 100px 20px 40px; /* topo extra para compensar o header */
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 .logo {
-  width: 230px;
-  margin-bottom: 10px;
+  width: 250px;
 }
 
+/* Container central */
+.container {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+
+/* Subtítulo */
 .subtitulo {
-  font-size: 1.2em;
+  font-size: 1.6em;
+  color: #fff;
   margin-bottom: 40px;
+  line-height: 1.4em;
 }
 
+/* Botões */
 .botoes {
   display: flex;
   flex-direction: column;
@@ -50,35 +59,28 @@ body.home {
 }
 
 .botao {
-  display: block;
   padding: 15px;
-  font-size: 1em;
-  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
-  color: white;
-  font-weight: bold;
+  text-align: center;
 }
 
 .botao.laranja {
-  background-color: #ff4d00;
+  background-color: #ff5a00;
+  color: white;
+}
+
+/* Links abaixo */
+.links-rodape {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .links-rodape a {
-  display: block;
   color: white;
-  margin-top: 10px;
   text-decoration: none;
   font-weight: bold;
-}
-
-/* Outras páginas com fundo branco */
-body:not(.home) {
-  background-color: white;
-  color: #000;
-}
-
-body:not(.home) .logo {
-  display: block;
-  margin: 20px auto;
 }
