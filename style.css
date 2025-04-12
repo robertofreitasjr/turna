@@ -24,11 +24,11 @@ header {
 .container, .form-container {
   max-width: 400px;
   margin: 100px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
-  text-align: center;
+  box-shadow: none;
+  border: none;
 }
 
 .form-container input,
