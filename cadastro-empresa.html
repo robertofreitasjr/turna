@@ -1,40 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cadastre sua empresa no Turna e encontre os melhores profissionais para o seu negócio. Fácil, rápido e gratuito." />
   <title>Cadastro de Empresa - Turna</title>
-  <meta name="description" content="Cadastre sua empresa na Turna e encontre os melhores profissionais para seu negócio no setor de hospitalidade.">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <script>
-    function validarCNPJ(cnpj) {
-      cnpj = cnpj.replace(/[^\d]+/g,'');
-      if(cnpj == '') return false;
-      if (cnpj.length != 14) return false;
-      return true;
-    }
-    function validarFormulario() {
-      const cnpj = document.getElementById("cnpj").value;
-      if (!validarCNPJ(cnpj)) {
-        alert("CNPJ inválido!");
-        return false;
-      }
-      return true;
-    }
-  </script>
 </head>
-<body class="fundo-branco">
+<body class="cadastro">
   <header>
-    <img src="turna-logo.png" alt="Turna" class="logo" />
+    <img src="turna-app-logo.png" alt="Logotipo Turna" class="logo" />
   </header>
+
   <main class="form-container">
-    <h1>Cadastro de Empresa</h1>
-    <form onsubmit="return validarFormulario()">
+    <h2>Cadastro de Empresa</h2>
+    <form>
       <input type="text" placeholder="Nome da Empresa" required />
-      <input type="text" id="cnpj" placeholder="CNPJ" required />
+      <input type="text" placeholder="CNPJ" required />
       <input type="email" placeholder="E-mail" required />
       <input type="password" placeholder="Senha" required />
+
       <select required>
         <option value="">Selecione a categoria</option>
         <option>Balada</option>
@@ -46,10 +31,12 @@
         <option>Outros</option>
         <option>Restaurante</option>
       </select>
+
       <button type="submit" class="btn">Cadastrar</button>
     </form>
-    <div class="form-links">
-      <a href="index.html">Voltar ao início</a>
+
+    <div class="nav-links">
+      <a href="index.html">Voltar ao início</a> |
       <a href="#">Já é cadastrado? Faça login</a>
     </div>
   </main>
