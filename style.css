@@ -58,6 +58,14 @@ main.home .links a {
   margin-top: 10px;
   text-decoration: none;
 }
+.links a {
+  display: block;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
 .home-buttons {
   display: flex;
   flex-direction: column;
