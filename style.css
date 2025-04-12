@@ -31,6 +31,10 @@ header {
   border: none;
 }
 
+.centralizado {
+  text-align: center;
+}
+
 .form-container input,
 .form-container select {
   width: 100%;
