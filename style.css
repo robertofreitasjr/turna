@@ -1,115 +1,102 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #fff;
-  color: #333;
+  background: #fff;
+  color: #000;
 }
+
+body.home {
+  background: url('fundo-index.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
-  box-shadow: none;
-  border-bottom: none;
+  text-align: center;
+  padding: 20px 0 0;
 }
+
 .logo {
-  height: 100px;
-  object-fit: contain;
+  max-width: 200px;
+  height: auto;
 }
-main.home {
-  background: url('fundo-home.png') no-repeat center center/cover;
-  height: 100vh;
+
+.container, .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  justify-content: center;
+  padding: 20px;
+  min-height: 80vh;
 }
-main.home h1 {
-  color: white;
+
+h1, h2 {
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-main.home .links a {
-  color: white;
+  margin-bottom: 20px;
 }
 
 .btn {
-  background-color: #f60;
-  color: white;
+  background-color: #0053ff;
+  color: #fff;
   border: none;
-  padding: 12px 24px;
-  margin: 10px;
+  padding: 14px 30px;
   font-size: 16px;
+  margin: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
   text-decoration: none;
-  border-radius: 8px;
+  width: 220px;
   display: inline-block;
 }
-.links a {
-  display: block;
-  color: white;
-  text-align: center;
-  margin-top: 10px;
-  text-decoration: none;
-}
-.links a {
-  display: block;
-  color: white;
-  text-align: center;
-  margin-top: 10px;
-  text-decoration: none;
+
+.btn:hover {
+  background-color: #003bbf;
 }
 
-.home-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.home-buttons .btn {
-  width: 220px;
-  text-align: center;
-}
-
-.fundo-branco {
-  background-color: white;
-}
-.form-container {
-  max-width: 400px;
-  margin: 120px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-form {
+input, select {
   width: 100%;
-}
-form input, form select {
-  width: 100%;
-  padding: 10px;
+  max-width: 300px;
+  padding: 12px;
   margin: 8px 0;
+  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 6px;
 }
-form button.btn {
-  width: 100%;
+
+nav.links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 30px;
 }
-.form-links {
-  margin-top: 15px;
+
+nav.links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav.links a:hover {
+  text-decoration: underline;
+}
+
+body.cadastro {
+  background-color: #fff;
+}
+
+.nav-links {
+  margin-top: 20px;
   text-align: center;
 }
-.form-links a {
-  color: #f60;
+
+.nav-links a {
+  color: #0053ff;
   text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
 }
