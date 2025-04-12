@@ -29,10 +29,8 @@ header {
   border-radius: 12px;
   box-shadow: none;
   border: none;
-}
-
-.centralizado {
-  text-align: center;
+  text-align: center; /* Isso centraliza o texto */
+  }
 }
 
 .form-container input,
