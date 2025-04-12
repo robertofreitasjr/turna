@@ -6,7 +6,7 @@ body {
 }
 
 body.home {
-  background: url('turna-profissionais-fundo.png') no-repeat center bottom;
+  background: url('turna-profissionais-fundo.png') no-repeat center center fixed;
   background-size: cover;
   color: #000;
 }
