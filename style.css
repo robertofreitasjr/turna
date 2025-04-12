@@ -22,7 +22,7 @@ header {
   object-fit: contain;
 }
 main.home {
-  background: url('bg.jpg') no-repeat center center/cover;
+  background: url('fundo-home.png') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
