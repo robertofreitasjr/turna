@@ -8,7 +8,7 @@ body {
 body.home {
   background: url('fundo-index.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: #000;
 }
 
 header {
@@ -24,7 +24,7 @@ header {
 .container, .form-container {
   max-width: 400px;
   margin: 100px auto;
-  padding: 30px;
+  padding: 20px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.05);
@@ -34,9 +34,9 @@ header {
 .form-container input,
 .form-container select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
 }
