@@ -1,54 +1,85 @@
-body.home {
-  background: url('fundo-home.png') no-repeat center center fixed;
-  background-size: cover;
+body {
   margin: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 150px;
+  background-color: #fff;
+  color: #333;
 }
-
-header .logo {
+header {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 60px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  box-shadow: none;
+  border-bottom: none;
 }
-
-.home-container {
+.logo {
+  height: 80px;
+  object-fit: contain;
+}
+main.home {
+  background: url('bg.jpg') no-repeat center center/cover;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  padding-top: 100px;
+}
+main.home h1 {
   color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
 }
-
-h1 {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.btn.laranja {
+.btn {
   background-color: #f60;
   color: white;
   border: none;
   padding: 12px 24px;
+  margin: 10px;
+  font-size: 16px;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
-  width: 200px;
+  display: inline-block;
 }
-
-.links-home {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 20px;
-}
-
-.links-home a {
+.links a {
+  display: block;
   color: white;
-  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.fundo-branco {
+  background-color: white;
+}
+.form-container {
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+form button.btn {
+  width: 100%;
+}
+.form-links {
+  margin-top: 15px;
+  text-align: center;
+}
+.form-links a {
+  color: #f60;
   text-decoration: none;
 }

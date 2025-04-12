@@ -1,81 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Empresas | Turna</title>
-  <meta name="description" content="Cadastre sua empresa no Turna e publique oportunidades para profissionais do setor.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Empresa - Turna</title>
+  <meta name="description" content="Cadastre sua empresa na Turna e encontre os melhores profissionais para seu negócio no setor de hospitalidade.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <script>
-    // Validação básica de CNPJ
     function validarCNPJ(cnpj) {
-      cnpj = cnpj.replace(/[^\d]+/g, '');
-      if (cnpj.length !== 14) return false;
-      if (/^(\d)\1+$/.test(cnpj)) return false;
-
-      let t = cnpj.length - 2,
-          d = cnpj.substring(t),
-          d1 = parseInt(d.charAt(0)),
-          d2 = parseInt(d.charAt(1)),
-          calc = x => {
-            let n = cnpj.substring(0, x),
-                y = x - 7,
-                s = 0;
-            for (let i = x; i >= 1; i--) {
-              s += n.charAt(x - i) * y--;
-              if (y < 2) y = 9;
-            }
-            const r = 11 - s % 11;
-            return r > 9 ? 0 : r;
-          };
-      return calc(t) === d1 && calc(t + 1) === d2;
+      cnpj = cnpj.replace(/[^\d]+/g,'');
+      if(cnpj == '') return false;
+      if (cnpj.length != 14) return false;
+      return true;
     }
-
     function validarFormulario() {
-      const cnpjInput = document.getElementById('cnpj').value;
-      if (!validarCNPJ(cnpjInput)) {
-        alert('CNPJ inválido. Verifique e tente novamente.');
+      const cnpj = document.getElementById("cnpj").value;
+      if (!validarCNPJ(cnpj)) {
+        alert("CNPJ inválido!");
         return false;
       }
       return true;
     }
   </script>
 </head>
-<body>
-
-  <header class="cabecalho">
-    <img src="turna-logo.png" alt="Turna" class="logo">
+<body class="fundo-branco">
+  <header>
+    <img src="logo.png" alt="Logotipo Turna" class="logo" />
   </header>
-
-  <main class="container-cadastro">
-    <h2>Cadastro de Empresa</h2>
+  <main class="form-container">
+    <h1>Cadastro de Empresa</h1>
     <form onsubmit="return validarFormulario()">
-      <input type="text" name="nome" placeholder="Nome da Empresa" required>
-      <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" required>
-      <input type="email" name="email" placeholder="E-mail" required>
-      <input type="password" name="senha" placeholder="Senha" required>
-
-      <select name="categoria" required>
-        <option value="" disabled selected>Selecione a categoria</option>
-        <option value="Balada">Balada</option>
-        <option value="Bar">Bar</option>
-        <option value="Buffet">Buffet</option>
-        <option value="Café">Café</option>
-        <option value="Evento">Evento</option>
-        <option value="Hotel">Hotel</option>
-        <option value="Outros">Outros</option>
-        <option value="Restaurante">Restaurante</option>
+      <input type="text" placeholder="Nome da Empresa" required />
+      <input type="text" id="cnpj" placeholder="CNPJ" required />
+      <input type="email" placeholder="E-mail" required />
+      <input type="password" placeholder="Senha" required />
+      <select required>
+        <option value="">Selecione a categoria</option>
+        <option>Balada</option>
+        <option>Bar</option>
+        <option>Buffet</option>
+        <option>Café</option>
+        <option>Evento</option>
+        <option>Hotel</option>
+        <option>Outros</option>
+        <option>Restaurante</option>
       </select>
-
-      <button type="submit">Cadastrar</button>
+      <button type="submit" class="btn">Cadastrar</button>
     </form>
-
-    <div class="links-rodape">
-      <a href="index.html">Voltar ao início</a>
-      <a href="login.html">Já é cadastrado? Faça login</a>
+    <div class="form-links">
+      <a href="index.html">Voltar ao início</a> |
+      <a href="#">Já é cadastrado? Faça login</a>
     </div>
   </main>
-
 </body>
 </html>
