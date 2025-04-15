@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login para acesso à plataforma Turna. Conecte-se como profissional ou empresa." />
+  <title>Login - Turna</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="turna-app-logo.png" alt="Turna" class="logo" />
+  </header>
+<main class="container">
+    <h1>Login</h1>
+    <form class="form-container" action="/api/login" method="POST">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <div class="form-links">
+      <p>Ainda não tem uma conta?</p>
+      <a href="cadastro-empresa.html">Cadastrar Empresa</a>
+      <a href="cadastro-profissionais.html">Cadastrar Profissional</a>
+      <a href="index.html">Voltar à página inicial</a>
+    </div>
+  </main>
+</body>
+</html>
